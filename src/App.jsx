@@ -364,6 +364,21 @@ function App() {
                   (item) => !selected.includes(item.id)
                 );
                 setData(newData);
+                setFilteredData(
+                  newData.filter(
+                    (item) =>
+                      item.name
+                        .toLowerCase()
+                        .includes(searchQuery.toLowerCase()) ||
+                      item.email
+                        .toLowerCase()
+                        .includes(searchQuery.toLowerCase()) ||
+                      item.role
+                        .toLowerCase()
+                        .includes(searchQuery.toLowerCase()) ||
+                      item.id.toLowerCase().includes(searchQuery.toLowerCase())
+                  )
+                );
                 setSelected([]);
               }}
             >
