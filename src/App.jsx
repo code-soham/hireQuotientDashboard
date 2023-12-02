@@ -185,11 +185,11 @@ function App() {
                   className="checkbox-primary checkbox rounded-sm checkbox-xs"
                   type="checkbox"
                   checked={
-                    selected.length === filteredData.length &&
+                    selected.length === currentpageData.length &&
                     selected.length !== 0
                   }
                   onChange={() => {
-                    if (selected.length === filteredData.length) {
+                    if (selected.length === currentpageData.length) {
                       setSelected([]);
                     } else {
                       setSelected(currentpageData.map((item) => item.id));
